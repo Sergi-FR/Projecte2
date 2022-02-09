@@ -18,15 +18,16 @@
         <img src="" alt="img sessio">
 
     </header>
-
+    
     <main>
 
-
+    <h2>info gimnas</h2>
 
     </main>
 
     <footer>
 
+    <a href="">contacte</a>
 
     </footer>
 
