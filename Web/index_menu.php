@@ -11,6 +11,23 @@
     <title>GYM</title>
 </head>
 <body>
-    <h1>Paguina prinsipal amb sessio iniciada</h1>
+    <header>
+        <h1>Paguina prinsipal</h1>
+        <a href="">menu</a>
+        <img src="" alt="img sessio">
+
+    </header>
+
+    <main>
+
+
+
+    </main>
+
+    <footer>
+
+
+    </footer>
+
 </body>
 </html>

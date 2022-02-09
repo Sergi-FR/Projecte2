@@ -13,6 +13,8 @@
 <body>
     <h1>Inici Sessio</h1>
 
-    <a href="index_menu.php">Inicia Sessio</a>
+    <form action="">
+        <input type="text">
+    </form>
 </body>
 </html>
