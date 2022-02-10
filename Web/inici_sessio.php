@@ -13,8 +13,12 @@
 <body>
     <h1>Inici Sessio</h1>
 
-    <form action="">
-        <input type="text">
+    <form action="index_menu.php" method="post">
+
+        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
+        <input type="pasword" name="contra" id="contra" placeholder= "Contraseña">
+        <input type="submit" value="Login">
+
     </form>
 </body>
 </html>

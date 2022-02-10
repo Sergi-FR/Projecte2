@@ -13,12 +13,12 @@
 </head>
 <body>
     <header>
-        <h1>Paguina prinsipal</h1>
+        <h1>Paguina principal</h1>
         <a href="">menu</a>
         <img src="" alt="img sessio">
 
     </header>
-    
+
     <main>
 
     <h2>info gimnas</h2>

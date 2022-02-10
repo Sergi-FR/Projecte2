@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Paguina prinsipal</h1>
+        <h1>Paguina principal</h1>
         <a href="inici_sessio.php">Inici Sessio</a>
 
     </header>
