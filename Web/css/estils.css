@@ -5,6 +5,9 @@
 
 header {
     border: 1px solid black;
+}
+
+header ul{
     display: flex;
 
     justify-content: space-between;
@@ -16,4 +19,10 @@ main{
 
 footer{
     border: 1px solid black;
+}
+
+
+
+li{
+    list-style: none;
 }

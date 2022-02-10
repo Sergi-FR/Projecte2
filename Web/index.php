@@ -9,9 +9,10 @@
 </head>
 <body>
     <header>
-        <h1>Paguina principal</h1>
-        <a href="inici_sessio.php">Inici Sessio</a>
-
+        <ul>
+            <li><h1>Paguina principal</h1></li>
+            <li> <a href="inici_sessio.php"> Inici Sessio</a> </li>
+        </ul>
     </header>
 
     <main>

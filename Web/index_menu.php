@@ -13,10 +13,17 @@
 </head>
 <body>
     <header>
-        <h1>Paguina principal</h1>
-        <a href="">menu</a>
-        <img src="" alt="img sessio">
-
+        <ul>
+            <li><a href="index_menu.php">Paguina principal</a>
+            
+            </li>
+            <li><a href="">menu</a>
+        
+            </li>
+            <li><img src="" alt="img sessio">
+        
+            </li>
+        </ul>
     </header>
 
     <main>

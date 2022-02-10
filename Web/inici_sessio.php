@@ -16,7 +16,7 @@
     <form action="index_menu.php" method="post">
 
         <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-        <input type="pasword" name="contra" id="contra" placeholder= "Contraseña">
+        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
         <input type="submit" value="Login">
 
     </form>
