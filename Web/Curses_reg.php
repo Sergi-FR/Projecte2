@@ -1,7 +1,6 @@
 <?php
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +32,7 @@
 
     <main>
 
-    <h2>info gimnas</h2>
+    <h2>Reguistres Curses</h2>
 
     </main>
 
@@ -42,6 +41,6 @@
     <a href="">contacte</a>
 
     </footer>
-
+    
 </body>
 </html>

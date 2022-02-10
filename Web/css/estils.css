@@ -13,6 +13,14 @@ header ul{
     justify-content: space-between;
 }
 
+.menu li{
+    border: 1px solid black;
+}
+
+li{
+    list-style: none;
+}
+
 main{
     border: 1px solid black;
 }
@@ -21,8 +29,3 @@ footer{
     border: 1px solid black;
 }
 
-
-
-li{
-    list-style: none;
-}
