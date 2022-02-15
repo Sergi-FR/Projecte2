@@ -12,21 +12,21 @@
       <body>
         <div class="header">
           <ul>
-            <li><a href="index_menu.php"><img src="" alt="logo"/></a>
+            <li><a href="view/index_menu.view.php"><img src="" alt="logo"/></a>
 
             </li>
             <li>
               <ul class="menu">
-                <li><a href="Act.php">Activitats Diaries</a></li>
-                <li><a href="Act_reg.php">Reguistres Activitats</a></li>
+                <li><a href="Act.view.php">Activitats Diaries</a></li>
+                <li><a href="Act_reg.view.php">Reguistres Activitats</a></li>
                 <li><a href="curses.xml">Curses</a></li>
-                <li><a href="Curses_reg.php">Participacio Curses</a></li>
+                <li><a href="Curses_reg.view.php">Participacio Curses</a></li>
               </ul>
             </li>
-            <li id="user"><img src="" alt="img sessio"/>
+            <li id="user"><img src="img/perfil.png" alt="img sessio"/>
               <ul>
                 <li><a href="#">Perfil</a></li>
-                <li><a href="tancar.php">Tancar Sessio</a></li>
+                <li><a href="php/tancar.php">Tancar Sessio</a></li>
               </ul>
             </li>
           </ul>
