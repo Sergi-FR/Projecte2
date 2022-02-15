@@ -1,0 +1,80 @@
+*{
+    padding: 0px;
+    margin: 2px;
+}
+
+.header {
+    border: 1px solid black;
+}
+
+.header ul{
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.menu li{
+    border: 1px solid black;
+}
+
+li{
+    list-style: none;
+}
+
+.dropbtn {
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.user{
+    position: relative;
+    display: inline-block;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.drop a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.drop a:hover {
+      background-color: #f1f1f1
+}
+  
+.user:hover .drop {
+    display: block;
+}
+  
+.user:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.main{
+    border: 1px solid black;
+}
+
+.curses{
+    display: flex;
+
+    justify-content: space-around;
+}
+
+.cursa{
+    border: 1px solid black;
+    width: 30%;
+    padding: 5px;
+}
+
+.footer{
+    border: 1px solid black;
+}

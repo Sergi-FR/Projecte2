@@ -1,0 +1,11 @@
+<!ELEMENT curses (cursa+)>
+<!ELEMENT cursa (nom, modalitat, localitat, durada, data, img)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT modalitat (#PCDATA)>
+<!ELEMENT localitat (#PCDATA)>
+<!ELEMENT durada (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+<!ELEMENT img (#PCDATA)>
+
+
+<!ATTLIST cursa id ID #REQUIRED>
