@@ -23,12 +23,11 @@
                 <li><a href="Curses_reg.view.php">Participacio Curses</a></li>
               </ul>
             </li>
-            <li class="user">
-                <img src="img/perfil.png" alt="img sessio" calss="dorpbtn">
-                <div class="drop">
-                    <a href="#">Perfil</a>
-                    <a href="php/tancar.php">Tancar Sessio</a>
-                </div>
+            <li id="user"><img src="img/perfil.png" alt="img sessio"/>
+              <ul>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="php/tancar.php">Tancar Sessio</a></li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -44,7 +43,8 @@
                 <h4><xsl:value-of select="modalitat"/></h4>
                 <h4>A <xsl:value-of select="localitat"/> el <xsl:value-of select="data"/></h4>
                 <h4><xsl:value-of select="durada"/></h4>
-                <input type="button" value="Inscriu-te" id="boto"/>
+                <h4><xsl:value-of select="@id"/></h4>
+                <input type="button" value="Inscriu-te" class="boto" onclick="inscriu({@id})"/>
               </div>
             </xsl:for-each>
 

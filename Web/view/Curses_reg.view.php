@@ -24,12 +24,11 @@
                 <li><a href="Curses_reg.view.php">Participacio Curses</a></li>
               </ul>
             </li>
-            <li class="user">
-                <img src="../img/perfil.png" alt="img sessio" calss="dorpbtn">
-                <div class="drop">
-                    <a href="#">Perfil</a>
-                    <a href="../php/tancar.php">Tancar Sessio</a>
-                </div>
+            <li id="user"><img src="../img/perfil.png" alt="img sessio">
+              <ul>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="../php/tancar.php">Tancar Sessio</a></li>
+              </ul>
             </li>
           </ul>
         </div>

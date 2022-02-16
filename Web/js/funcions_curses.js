@@ -1,6 +1,19 @@
+// let numBotons = document.getElementsByClassName("boto");
 
-document.getElementById("boto").addEventListener('click', ()=>{
+// for(var i=0; i<numBotons.length ;i++ ){
 
-console.log("Inscripcío realitzada");
+//     numBotons[i].addEventListener('click', ()=>{
 
-})
+//     console.log("Inscripcío realitzada: " + i);
+
+//     })
+
+// }
+
+
+
+function inscriu(idboto){
+
+console.log("id: " + idboto)
+
+}
