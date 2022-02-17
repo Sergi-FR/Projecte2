@@ -44,9 +44,11 @@
                 <h4>A <xsl:value-of select="localitat"/> el <xsl:value-of select="data"/></h4>
                 <h4><xsl:value-of select="durada"/></h4>
                 <h4><xsl:value-of select="@id"/></h4>
-                <input type="button" value="Inscriu-te" class="boto" onclick="inscriu({@id})"/>
+                <input type="button" value="Inscriu-te" class="boto" id="{@id}" onclick="inscriu(id)"/>
               </div>
             </xsl:for-each>
+
+            <p id="demo"></p>
 
           </div>
 
