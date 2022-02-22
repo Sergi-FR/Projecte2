@@ -16,7 +16,7 @@ function inscriu(idboto){
 
     console.log("id: " + idboto)
 
-    var nom;
+    let nom;
 
     var xhttp = new XMLHttpRequest();
 
@@ -31,8 +31,7 @@ function inscriu(idboto){
 
     function myFunction(xml){
         var xmlDoc = xml.responseXML;
-        document.getElementById("demo").innerHTML =
-        xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        nom = xmlDoc.getElementsByTagName("nom")[0].childNodes[0].nodeValue;
     }
 
     console.log(idboto + " " + nom)

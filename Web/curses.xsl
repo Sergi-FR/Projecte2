@@ -24,7 +24,7 @@
               </ul>
             </li>
             <li class="user">
-                <img src="img/perfil.png" alt="img sessio" calss="dorpbtn">
+                <img src="img/perfil.png" alt="img sessio" calss="dorpbtn"/>
                 <div class="drop">
                     <a href="#">Perfil</a>
                     <a href="php/tancar.php">Tancar Sessio</a>
@@ -48,8 +48,6 @@
                 <input type="button" value="Inscriu-te" class="boto" id="{@id}" onclick="inscriu(id)"/>
               </div>
             </xsl:for-each>
-
-            <p id="demo"></p>
 
           </div>
 

@@ -1,7 +1,31 @@
 <?php
 
+    //Connexio a la BD
+    $connexio = new mysqli("localhost", "root", "costa2021", "projecte2");
+
+    //Comprovasio de la connexio
+    if($connexio->connect_errno){
+        die ("No s'ha pogut fer la connexió");
+    } else {
+        session_start();
 
 
+
+        if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
+
+            //Consulta
+            $sql = "SELECT Usuari, Contrasenya from Usuari where Usuari = $_POST['usuari'];" ;
+            $result = $connexio->query($sql);
+
+            $message = '';
+            
+            if(count($result) > 0 && password_verify($_POST['contra'], $result['contrasenya'])){
+                $_SESSION['usuari'] = $result['Usuari'];
+                header("index_menu.view.php")
+            } else {
+                $error = 'L\'usuari o contrasenya son incorectes';
+            }
+        }
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +39,11 @@
 <body>
     <h1>Inici Sessio</h1>
 
-    <form action="index_menu.view.php" method="post">
+    <?php if(!empty($message)): ?>
+        <p> <?= $message ?> </p>
+    <?php endif; ?>
+
+    <form action="inici_sessio.view.php" method="post">
 
         <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
         <input type="password" name="contra" id="contra" placeholder= "Contraseña">
