@@ -9,23 +9,24 @@
     } else {
         session_start();
 
-
-
         if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
 
+            $usuari = $_POST['usuari'];
+
             //Consulta
-            $sql = "SELECT Usuari, Contrasenya from Usuari where Usuari = $_POST['usuari'];" ;
+            $sql = "SELECT Usuari, Contrasenya from Usuari where Usuari = $usuari;" ;
             $result = $connexio->query($sql);
 
             $message = '';
             
             if(count($result) > 0 && password_verify($_POST['contra'], $result['contrasenya'])){
                 $_SESSION['usuari'] = $result['Usuari'];
-                header("index_menu.view.php")
+                header("Location: index_menu.view.php");
             } else {
                 $error = 'L\'usuari o contrasenya son incorectes';
             }
         }
+    }
 ?>
 
 <!DOCTYPE html>
