@@ -9,6 +9,8 @@
     } else {
         session_start();
 
+
+
         if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
 
             $usuari = $_POST['usuari'];
@@ -19,11 +21,15 @@
 
             $message = '';
             
-            if(count($result) > 0 && password_verify($_POST['contra'], $result['contrasenya'])){
-                $_SESSION['usuari'] = $result['Usuari'];
-                header("Location: index_menu.view.php");
+            if($connexio -> affected_rows > 0){
+                if(password_verify($_POST['contra'], $result['contrasenya'])){
+                    $_SESSION['usuari'] = $result['Usuari'];
+                    header("Location: index_menu.view.php");
+                } else {
+                    $message = 'L\'usuari o contrasenya son incorectes';
+                }
             } else {
-                $error = 'L\'usuari o contrasenya son incorectes';
+                $message = "nxgfm";
             }
         }
     }
