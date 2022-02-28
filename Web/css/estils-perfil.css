@@ -40,6 +40,53 @@ header {
 
 }
 
+
+.dropbtn {
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.user{
+    position: relative;
+    display: inline-block;
+}
+
+.menu .user img{
+
+    margin-top: -30px;
+
+    width: 80px;
+    height: 80px;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.drop a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.drop a:hover {
+      background-color: #f1f1f1
+}
+  
+.user:hover .drop {
+    display: block;
+}
+  
+.user:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
 header ul{
 
     display: flex;
@@ -74,84 +121,6 @@ h1 {
 
 }
 
-.titular a {
-
-    background: #000;
-    color: #C2E71F;
-    padding: 20px 40px;
-}
-
-.contenedor-tarjetas {
-
-    display: flex;
-    justify-content: center;
-
-}
-
-.tarjeta {
-
-    text-align: center;
-    box-shadow: -1px 0px 5px #0000001f;
-    width: 30%;
-    margin-top: -100px;
-    background: #fff;
-    padding: 40px 0px;
-    border-radius: 8px;
-
-}
-
-.imagen-tarjeta{
-    width: 150px;
-    height: px;
-}
-
-#segunda-tarjeta{
-
-    margin: 0px 60px;
-    margin-top: -100px;
-    
-}
-
-.tarjeta p{
-    font-size: 15px;
-}
-
-.fa {
-    padding: 25px;
-    width: 90px;
-    text-align: center;
-    text-decoration: none;
-    margin-left: -5px;
-
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-.fa-facebook {
-
-    background: #3B5998;
-    color: white;
-}
-  
-.fa-twitter {
-
-    background: #55ACEE;
-    color: white;
-}
-  
-.fa-instagram {
-
-    background: #ffb71b;
-    color: white;
-}
-
-#galeria, .ocultar-mobil{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .Sub-titulo{
 
     display: flex;
@@ -171,24 +140,6 @@ h1 {
 
 }
 
-#galeria{
-
-    margin: auto;
-    margin-bottom: 30px;
-}
-
-#galeria img{
-
-    width: 100%;
-
-}
-
-#galeria .foto{
-
-    width: 30%;
-    position: relative;
-
-}
 
 .texte{
 
@@ -210,7 +161,9 @@ h1 {
 }
 
 footer #contactar{
-    padding: 65px;
+
+    height: 100px;
+    padding: 25px;
 
     background: #000;
     text-align: center;
@@ -222,12 +175,12 @@ footer #contactar{
 
 footer #contactar h2{
 
-    font-size: 55px;
+    font-size: 20px;
     font-style: italic;
     width: 90%;
 
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 
 }
 
