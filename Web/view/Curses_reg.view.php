@@ -20,7 +20,7 @@
               <ul class="menu">
                 <li><a href="Act.view.php">Activitats Diaries</a></li>
                 <li><a href="Act_reg.view.php">Reguistres Activitats</a></li>
-                <li><a href="../curses.xml">Curses</a></li>
+                <li><a href="../xml/curses.xml">Curses</a></li>
                 <li><a href="Curses_reg.view.php">Participacio Curses</a></li>
               </ul>
             </li>

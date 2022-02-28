@@ -40,6 +40,11 @@ header {
 
 }
 
+.menu img{
+    width: 250px;
+    height: 200px;
+}
+
 header ul{
 
     display: flex;
@@ -180,6 +185,7 @@ h1 {
 #galeria img{
 
     width: 100%;
+    height: 100%;
 
 }
 
