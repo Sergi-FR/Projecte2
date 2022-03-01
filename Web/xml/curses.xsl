@@ -18,10 +18,10 @@
             </li>
             <li>
               <ul class="menu">
-                <li><a href="Act.php">Activitats Diaries</a></li>
-                <li><a href="Act_reg.php">Reguistres Activitats</a></li>
-                <li><a href="curses.xml">Curses</a></li>
-                <li><a href="Curses_reg.php">Participacio Curses</a></li>
+                <li><a href="../view/Act.view.php">Activitats Diaries</a></li>
+                <li><a href="../view/Act_reg.view.php">Reguistres Activitats</a></li>
+                <li><a href="curses.view.xml">Curses</a></li>
+                <li><a href="../view/Curses_reg.view.php">Participacio Curses</a></li>
               </ul>
             </li>
             <li id="user"><img src="../img/logo.png" alt="img sessio"/>
