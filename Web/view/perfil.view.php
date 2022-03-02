@@ -4,28 +4,6 @@ include '../php/funcions_act.php';
 
 session_start();
 
-if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
-
-    $usuari = "Usuari='".$_POST['usuari']."' ";
-    $contra = "Contrasenya=MD5('".$_POST['contra']."') ";
-
-    //Consulta
-    $sql = "SELECT Usuari, Contrasenya from Usuari where $usuari and $contra;";
-    $result = con()->query($sql);
-
-    $message = '';
-
-    if($result->num_rows > 0){
-        while($row = $result->fetch_assoc()){
-            $_SESSION['usuari'] = $row['Usuari'];
-            $_SESSION['contra'] = $row['Contrasenya'];
-            header("Location: menu.view.php");
-        }
-    } else {
-        $message = 'L\'usuari o contrasenya son incorectes';
-    }
-}
-
 ?>
 
 
@@ -37,7 +15,7 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/perfil.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,6 +41,26 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
 
                     <form action="login.view.php" method="post">
 
+                        <label>Nom usuari</label>
+                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
+                        <label>Contraseña</label>
+                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+                        <label>Nom usuari</label>
+                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
+                        <label>Contraseña</label>
+                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+                        <label>Nom usuari</label>
+                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
+                        <label>Contraseña</label>
+                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+                        <label>Nom usuari</label>
+                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
+                        <label>Contraseña</label>
+                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+                        <label>Nom usuari</label>
+                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
+                        <label>Contraseña</label>
+                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
                         <label>Nom usuari</label>
                         <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
                         <label>Contraseña</label>

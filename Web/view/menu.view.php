@@ -1,9 +1,9 @@
 <?php
 
-session_start();
-$user = $_SESSION['usuari'];
-
-include "../php/funcions.php";
+    include '../php/funcions_act.php';
+    session_start();
+    $user = $_SESSION['usuari'];
+    
 
 ?>
 
@@ -15,13 +15,14 @@ include "../php/funcions.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="../css/home.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="../css/estils-perfil.css">
 
 </head>
 <body>
@@ -39,7 +40,7 @@ include "../php/funcions.php";
                         <li class="user">
                             <img src="../img/perfil.png" alt="img sessio" calss="dorpbtn">
                             <div class="drop">
-                                <a href="#">Perfil</a>
+                                <a href="perfil.view.php">Perfil</a>
                                 <a href="../php/tancar.php">Tancar Sessio</a>
                             </div>
                         </li>
