@@ -1,6 +1,6 @@
 <?php
 
-  include '../php/funcions_act.php';
+  include '../php/funcions.php';
   session_start();
   $user = $_SESSION['usuari'];
     

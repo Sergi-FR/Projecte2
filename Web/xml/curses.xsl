@@ -16,10 +16,10 @@
             <li><img src="../img/logo.png" alt="logo"/></li>
             <li>
               <ul class="menu">
-                <li><a href="Act.php">Activitats Diaries</a></li>
-                <li><a href="Act_reg.php">Reguistres Activitats</a></li>
+                <li><a href="../view/Act.php">Activitats Diaries</a></li>
+                <li><a href="../view/Act_reg.php">Reguistres Activitats</a></li>
                 <li><a href="curses.xml">Curses</a></li>
-                <li><a href="Curses_reg.php">Participacio Curses</a></li>
+                <li><a href="../view/Curses_reg.php">Participacio Curses</a></li>
               </ul>
             </li>
             <li id="user"><img src="" alt="img sessio"/>

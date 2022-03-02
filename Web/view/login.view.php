@@ -1,6 +1,6 @@
 <?php
 
-include '../php/funcions_act.php';
+include '../php/funcions.php';
 
 session_start();
 
@@ -10,7 +10,7 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
     $contra = "Contrasenya=MD5('".$_POST['contra']."') ";
 
     //Consulta
-    $sql = "SELECT Usuari, Contrasenya from Usuari where $usuari and $contra;";
+    $sql = "SELECT * from Usuari where $usuari and $contra;";
     $result = con()->query($sql);
 
     $message = '';
@@ -19,8 +19,9 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
         while($row = $result->fetch_assoc()){
             $_SESSION['usuari'] = $row['Usuari'];
             $_SESSION['contra'] = $row['Contrasenya'];
-            header("Location: menu.view.php");
+            $_SESSION['DNI'] = $row['DNI'];
         }
+        header("Location: menu.view.php");
     } else {
         $message = 'L\'usuari o contrasenya son incorectes';
     }
