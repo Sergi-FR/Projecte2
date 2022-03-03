@@ -41,30 +41,39 @@ session_start();
 
                     <form action="login.view.php" method="post">
 
-                        <label>Nom usuari</label>
-                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
-                        <label>Nom usuari</label>
-                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
-                        <label>Nom usuari</label>
-                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
-                        <label>Nom usuari</label>
-                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
-                        <label>Nom usuari</label>
-                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
-                        <label>Nom usuari</label>
-                        <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari">
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+                        <div class="infoclient">
+
+                            <h4>Informació Client</h4>
+
+                            <label>Nom</label>
+                            <input type="text" name="usuari" id="usuari" placeholder="nom d'usuari" value="<?php echo $_SESSION['Nom']?>">
+
+                            <label>Cognom</label>
+                            <input type="text" name="Cognom" id="Cognom" placeholder="Cognom" value="<?php echo $_SESSION['Cognom']?>">
+
+                            <label>Data</label>
+                            <input type="text" name="Data" id="Data" placeholder="Data de naixement" value="<?php echo $_SESSION['Data_naixament']?>">
+
+                            <label>Tel.</label>
+                            <input type="text" name="Telefon" id="Telefon" placeholder="Telefon" value="<?php echo $_SESSION['Tele']?>">     
+
+                            <label>DNI</label>
+                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['DNI']?>" disabled>
+
+                        </div>
+
+                        <div class="usuari">
+
+                            <h4>Informació Usuari</h4>
+
+                            <label>Nom usuari</label>
+                            <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari" >
+
+                            <label>DNI</label>
+                            <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+
+                        </div>
+
                         <input type="submit" value="Login">
 
                     </form>

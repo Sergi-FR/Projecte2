@@ -49,7 +49,7 @@
             </div>
 
             <div class="titular">
-                <h1>Hola Benvingut de nou <?php echo $user; ?></h1>
+                <h1>Hola, Benvingut de nou <?php echo $_SESSION['Nom']; ?></h1>
             </div>
 
         </div>     

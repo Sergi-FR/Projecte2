@@ -10,7 +10,11 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
     $contra = "Contrasenya=MD5('".$_POST['contra']."') ";
 
     //Consulta
-    $sql = "SELECT * from Usuari where $usuari and $contra;";
+    $sql = "SELECT C.DNI as DNI_Client, Nom, Cognom, Data_naixement, Tel, Correu_e, Sexe, Condicio_Fisica, Comunicació_comercial, Usuari
+    from clients C,usuari U
+    where C.DNI=U.DNI and
+    $usuari and $contra";
+
     $result = con()->query($sql);
 
     $message = '';
@@ -18,8 +22,16 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $_SESSION['usuari'] = $row['Usuari'];
-            $_SESSION['contra'] = $row['Contrasenya'];
-            $_SESSION['DNI'] = $row['DNI'];
+            $_SESSION['DNI'] = $row['DNI_Client'];
+            $_SESSION['Nom'] = $row['Nom'];
+            $_SESSION['Cognom'] = $row['Cognom'];
+            $_SESSION['Data_naixement'] = $row['Data_naixement'];
+            $_SESSION['Tele'] = $row['Tel'];
+            $_SESSION['Correu_e'] = $row['Correu_e'];
+            $_SESSION['Sexe'] = $row['Sexe'];
+            $_SESSION['Condicio_Fisica'] = $row['Condicio_Fisica'];
+            $_SESSION['Comunicació_comercial'] = $row['Comunicació_comercial'];
+            
         }
         header("Location: menu.view.php");
     } else {

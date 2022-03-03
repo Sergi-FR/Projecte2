@@ -3,7 +3,7 @@
 function con(){
     
     //Connexio a la BD
-    $connexio = new mysqli("localhost", "root", "costa2021", "projecte2");
+    $connexio = new mysqli("localhost", "root", "root", "projecte2");
 
     //Comprovasio de la connexio
     if($connexio->connect_errno){
@@ -64,5 +64,7 @@ function visualitzarInfoActInv() {
     return $result;
 
 }
+
+
 
 ?>
