@@ -292,6 +292,67 @@ public class Client {
 
     }
 
+    public void baixaClient() throws SQLException {
+
+        Scanner teclat = new Scanner(System.in);
+
+        System.out.println("Indicar el DNI del client");
+        String dni = teclat.nextLine();
+
+        Client c = consultaClientBD(dni);
+
+        if (c != null) {
+            boolean baixa = comprovacioBaixa(dni);
+
+            if (baixa) {
+                baixaClientBD(dni);
+                System.out.println("S'ha donat de baixa");
+            } else {
+                System.out.println("El client ja sa donat de baixa");
+            }
+
+        } else {
+            System.out.println("El client no existeix");
+        }
+
+    }
+
+    private boolean comprovacioBaixa(String dni) throws SQLException {
+
+        ConexioBD bd = new ConexioBD();
+        Connection con = bd.conBD();
+
+        String consulta = "SELECT * FROM Registres where DNI = ?";
+
+        PreparedStatement sentencia = con.prepareStatement(consulta);
+
+        sentencia.setString(1, dni);
+
+        ResultSet rs = sentencia.executeQuery();
+
+        while (rs.next()) {
+            if (rs.getDate("Data_Baixa") == null) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void baixaClientBD(String dni) throws SQLException {
+
+        ConexioBD bd = new ConexioBD();
+        Connection con = bd.conBD();
+
+        String consulta = "UPDATE registres set Data_Baixa = localtime() where DNI = ?";
+
+        PreparedStatement ps = con.prepareStatement(consulta);
+
+        ps.setString(1, dni);
+
+        ps.execute();
+    }
+
     public void cargarDadesDeClientsEnSentencia(PreparedStatement ps) throws SQLException {
 
         ps.setString(1, this.DNI.getDni());

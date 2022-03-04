@@ -126,7 +126,7 @@ public class Gimnas {
         }
     }
 
-    static void gestioClients() {
+    static void gestioClients() throws SQLException {
 
         Scanner teclat = new Scanner(System.in);
         boolean sortirmenu = false;
@@ -158,7 +158,7 @@ public class Gimnas {
                     break;
 
                 case 3:
-                    // baixaClients();
+                    baixaClients();
                     break;
 
                 case 4:
@@ -175,6 +175,13 @@ public class Gimnas {
             }
 
         } while (!sortirmenu);
+
+    }
+
+    private static void baixaClients() throws SQLException {
+        Client c = new Client();
+
+        c.baixaClient();
 
     }
 
