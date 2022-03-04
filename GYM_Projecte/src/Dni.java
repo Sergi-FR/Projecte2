@@ -4,6 +4,29 @@ public class Dni {
     private int numero;
     private char lletra;
 
+    //Seters i Geters
+    //#######################################################################|
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    //Constructors
+    //#######################################################################|
+    public Dni(){
+
+    }
+
+    public Dni(String dni) {
+        this.dni = dni;
+    }
+    
+    //Metodes
+    //#######################################################################|
+
     public boolean validarDni(String dni){
 
         if(dni.length() != 9)return false;
@@ -24,6 +47,7 @@ public class Dni {
 
     }
 
+
     private boolean soloNumeros(String numero) {
 
         for (int i=0;i < numero.length()-1;i++){
@@ -42,16 +66,17 @@ public class Dni {
 
     private char calcularlletraDNI(String dniNum){
        
-       char[] assignacioLletra = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'E', 'S', 'Q', 'V', 'H', 'L', 'C'};    
-       int resto = 0;
-       char dniLletra=' ';
+        char[] assignacioLletra = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'E', 'S', 'Q', 'V', 'H', 'L', 'C'};    
+        int resto = 0;
+        char dniLletra=' ';
 
-       resto= Integer.parseInt(dniNum) % 23;
-       dniLletra = assignacioLletra[resto];
+        resto= Integer.parseInt(dniNum) % 23;
+        dniLletra = assignacioLletra[resto];
         
-        return lletra;
+        return dniLletra;
 
     }
+
 
 
 

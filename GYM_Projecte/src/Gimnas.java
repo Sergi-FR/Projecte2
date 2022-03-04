@@ -5,12 +5,10 @@ import java.util.Scanner;
 
 public class Gimnas {
 
-    private String nom;
     private String CIF;
-    private String telefon;
-
     ArrayList<Client> clients;
-    // ArrayList<Sala> Sales;
+    ArrayList<Activitat> activitats;
+    ArrayList<Reserva> reserva;
 
     public void gestionarGimnas() {
 
