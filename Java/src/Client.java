@@ -87,7 +87,7 @@ public class Client {
         ConexioBD bd = new ConexioBD();
         Connection con = bd.conBD();
 
-        String consulta = "SELECT C.*,count(reserva.dni) FROM reserva R join clients C on GROUP BY R.dni ORDER BY count(R.dni) desc";
+        String consulta = "SELECT C.*,count(R.id_act) FROM reserva R right join clients C on R.DNI = C.DNI GROUP BY R.dni ORDER BY count(R.id_act) desc";
 
         PreparedStatement ps = con.prepareStatement(consulta);
 

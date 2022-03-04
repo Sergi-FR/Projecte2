@@ -7,15 +7,15 @@ public class Gimnas {
 
     private String nom;
     private String CIF;
-    private String telefon;
+    private Telefon telefon;
 
     ArrayList<Client> clients;
-    ArrayList<Activitat> activitat;
+    ArrayList<Activitat> activitats;
     ArrayList<Reserva> reserves;
 
     public Gimnas() {
         clients = new ArrayList<>();
-        activitat = new ArrayList<>();
+        activitats = new ArrayList<>();
         reserves = new ArrayList<>();
     }
 
@@ -48,7 +48,7 @@ public class Gimnas {
                     break;
 
                 case 3:
-
+                    activitatsDiaries();
                     break;
 
                 case 4:
@@ -62,6 +62,21 @@ public class Gimnas {
 
         } while (!sortirmenu);
 
+    }
+
+    private void activitatsDiaries() throws SQLException {
+
+        Activitat a = new Activitat();
+
+        this.activitats = a.visalitzaActivitats();
+        visualitzarActivitats();
+
+    }
+
+    private void visualitzarActivitats() {
+        for (int i = 0; i < activitats.size(); i++) {
+            System.out.println(activitats.get(i));
+        }
     }
 
     private void menuVisuaCli() throws SQLException {

@@ -9,7 +9,7 @@ public class ConexioBD {
     private String servidor = "jdbc:mysql://localhost:3306/";
     private String bbdd = "projecte2";
     private String user = "root";
-    private String password = "costa2021";
+    private String password = "1234";
 
     public Connection conBD() {
 
