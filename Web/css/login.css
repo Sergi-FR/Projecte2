@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.contenedor{
+
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+li{
+    list-style: none    ;
+}
+a{
+    text-decoration: none;
+}
+
+header {
+
+    background-image: url(../img/fons.jpg); 
+    height: 100vh;
+
+}
+
+.menu {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.menu img{
+    width: 150px;
+    height: 100px;
+}
+
+.login{
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+
+}
+
+.formulari{
+
+    margin: 150px;
+
+
+    background-color: #fff;
+    border: 5px solid #fff;
+    border-radius: 8px;
+    width: 50vh;
+    height: 30vh;
+}
+
+.formulari form{
+
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formulari form input{
+
+    margin: 10px;
+    
+
+}
+
+
+input[type=text], input[type=password]{
+
+    padding: 10px;
+
+    border: none;
+    border-bottom: 2px solid #555 ;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+footer #contactar{
+
+    padding: 65px;
+
+    background: #000;
+    text-align: center;
+
+    color: #fff;
+
+}
+
+footer #contactar h2{
+
+    font-size: 55px;
+    font-style: italic;
+    width: 90%;
+
+    margin: auto;
+    margin-bottom: 30px;
+
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+}
+
+.info p {
+
+    margin: 0 40px;
+
+}
+
+/* #####################
+    Adaptació media
+##################### */
+
+@media screen and (max-width: 800px) {
+
+    .menu img{
+        width: 100px;
+        height: 100px;
+    }
+
+    footer{
+
+        height: 200px;
+
+    }
+
+    .formulari{
+
+        height: 35vh;
+    }
+
+    footer #contactar h2{
+        font-size: 30px;
+    }
+
+    .info{
+        flex-direction: column;
+
+    }
+
+    .info p{
+        margin-left: -3px;
+        margin-bottom: 10px;
+
+        width: 100%;
+        font-size: 15px;
+
+    }
+        
+}
