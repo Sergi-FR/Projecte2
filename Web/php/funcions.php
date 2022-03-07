@@ -3,7 +3,7 @@
 function con(){
     
     //Connexio a la BD
-    $connexio = new mysqli("localhost", "root", "costa2021", "projecte2");
+    $connexio = new mysqli("localhost", "root", "1234", "projecte2");
 
     //Comprovasio de la connexio
     if($connexio->connect_errno){
@@ -71,10 +71,41 @@ function act_insc() {
     
         return $result;
     } elseif(!empty($_POST['des'])) {
+        $sql="SELECT delete_reserva('".$_SESSION['DNI']."', ".$_POST["id_act"].") as msg";
+    
+        $result=con()->query($sql);
+    
+        return $result;
         
     }
 }
 
+function perfil(){
+    $comercial = $_SESSION['Comunicacio'];
+
+    if(!empty($_POST['comer'])){
+        $comercial = $_POST['comer'];
+    }
+
+    if(!empty($_POST['contra'])){
+        $sql = "UPDATE clients C, usuari U
+                set tel = ".$_POST['Telefon'].", Correu_e = '".$_POST['correu']."', Contrasenya =  MD5('".$_POST['contra']."'), Comunicació_comercial = ".$comercial."
+                where C.DNI = '".$_SESSION['DNI']."'";
+                echo "prova1";
+    } else {
+        $sql = "UPDATE clients C, usuari U
+                set tel = ".$_POST['Telefon'].", Correu_e = '".$_POST['correu']."', Comunicació_comercial = ".$comercial."
+                where C.DNI = '".$_SESSION['DNI']."'";
+                echo "prova2";
+    }
+
+    $_SESSION['usuari'] = $_POST['usuari'];
+    $_SESSION['Tele'] = $_POST['Telefon'];
+    $_SESSION['Correu'] = $_POST['correu'];
+    $_SESSION['Comunicacio'] = $comercial;
+
+    $result = con()->query($sql);
+}
 
 
 
