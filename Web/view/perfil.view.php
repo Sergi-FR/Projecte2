@@ -29,7 +29,7 @@ session_start();
     <header>
         <div class="contenedor">
             <div class="menu">
-                <img src="../img/logo.png" alt="Logo">>
+                <a href="menu.view.php"><img src="../img/logo.png" alt="Logo"></a>
             </div>
 
             <div class="login">

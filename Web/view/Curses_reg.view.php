@@ -38,7 +38,7 @@ $user = $_SESSION['usuari'];
                     <li class="user">
                         <img src="../img/perfil.png" alt="img sessio" calss="dorpbtn">
                         <div class="drop">
-                            <a href="#">Perfil</a>
+                            <a href="perfil.view.php">Perfil</a>
                             <a href="../php/tancar.php">Tancar Sessio</a>
                         </div>
                     </li>

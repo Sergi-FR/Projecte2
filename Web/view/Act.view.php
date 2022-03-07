@@ -3,7 +3,9 @@
   include '../php/funcions.php';
   session_start();
   $user = $_SESSION['usuari'];
-    
+  
+  $result = act_insc();
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,14 @@
     </div>     
   </header>
 
+    <h4><?php
+    if(!empty($_POST['ins'])){
+      while($row = $result->fetch_assoc()){
+        echo $row['msg'];
+      }
+    }
 
+    ?></h4>
 
     <div class="Sub-titulo">
         <h3>Activitats Col·lectives</h3>
@@ -67,12 +76,18 @@
               while($row = $result->fetch_assoc()){
               ?>
                 <li>
-                  <div class="tarjeta">
+                  <div class="tarjeta" style="border: 2px solid <?php echo $row['Color']; ?>">
                     <div class="img_Act">
                       <img src="../img/galeria1.jpg" alt="Activitat">
-                      <input type="button" value="Insciure">
+                      <form action="" method="post">
+                      <input type="text" name="id_act" class="id_act" value="<?php echo $row['Num_Act'] ?>">
+                      <input type="submit" value="Inscriure" name="ins">
+                      <input type="submit" value="Desinscriure" name="des">
+                      </form>
+
                     </div>
                     <div class ="info_Act">
+                      <h4><?php echo $row['Act'] ?></h4>
                       <p><span>Num. Activitat:</span><?php echo $row['Num_Act'] ?></p>
                       <p><span>Num. Sala:</span><?php echo $row['Num_Sala'] ?></p>
                       <p><span>Durada de L'activitat:</span><?php echo $row['Durada'] ?></p>
@@ -103,12 +118,17 @@
               while($row = $result->fetch_assoc()){
               ?>
                 <li>
-                  <div class="tarjeta">
+                  <div class="tarjeta" style="border: 2px solid <?php echo $row['Color']; ?>">
                     <div class="img_Act">
                       <img src="../img/galeria1.jpg" alt="Activitat">
-                      <input type="button" onclick="loadDoc()" value="Insciure">
+                      <form action="" method="post">
+                      <input type="text" name="id_act" class="id_act" value="<?php echo $row['Num_Act'] ?>">
+                      <input type="submit" value="Insciure" name="ins">
+                      <input type="submit" value="Desinscriure" name="des">
+                      </form>
                     </div>
-                    <div class ="info_Act">
+                    <div class ="info_Act"  >
+                      <h4><?php echo $row['Act'] ?></h4>
                       <p><span>Num. Activitat: </span><?php echo $row['Num_Act'] ?></p>
                       <p><span>Num. Sala: </span><?php echo $row['Num_Sala'] ?></p>
                       <p><span>Durada de L'activitat: </span><?php echo $row['Durada'] ?></p>
