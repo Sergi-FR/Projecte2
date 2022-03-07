@@ -4,6 +4,9 @@ include '../php/funcions.php';
 
 session_start();
 
+if(!empty($_POST)){
+    perfil();
+}
 ?>
 
 
@@ -35,11 +38,7 @@ session_start();
             <div class="login">
                 <div class="formulari"> 
 
-                    <?php if(!empty($message)): ?>
-                    <p> <?= $message ?> </p>
-                    <?php endif; ?>
-
-                    <form action="login.view.php" method="post">
+                    <form action="" method="post">
 
                         <div class="infoclient">
 
@@ -50,22 +49,22 @@ session_start();
                             <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['DNI']?>" disabled>
 
                             <label>Nom</label>
-                            <input type="text" name="usuari" id="usuari" placeholder="nom d'usuari" value="<?php echo $_SESSION['Nom']?>">
+                            <input type="text" name="usuari" id="usuari" placeholder="nom d'usuari" value="<?php echo $_SESSION['Nom']?>" disabled>
 
                             <label>Cognom</label>
-                            <input type="text" name="Cognom" id="Cognom" placeholder="Cognom" value="<?php echo $_SESSION['Cognom']?>">
+                            <input type="text" name="Cognom" id="Cognom" placeholder="Cognom" value="<?php echo $_SESSION['Cognom']?>" disabled>
 
                             <label>Data</label>
-                            <input type="text" name="Data" id="Data" placeholder="Data de naixement" value="<?php echo $_SESSION['Data']?>">
+                            <input type="text" name="Data" id="Data" placeholder="Data de naixement" value="<?php echo $_SESSION['Data']?>" disabled>
 
                             <label>Tel.</label>
                             <input type="text" name="Telefon" id="Telefon" placeholder="Telefon" value="<?php echo $_SESSION['Tele']?>">
 
                             <label>Correu Electronic</label>
-                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Correu']?>">     
+                            <input type="text" name="correu" id="correu" placeholder="Correu" value="<?php echo $_SESSION['Correu']?>">     
 
                             <label>Genere</label>
-                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Sexe']?>">
+                            <input type="text" name="sexe" id="sexe" placeholder="Sexe" value="<?php echo $_SESSION['Sexe']?>" disabled>
 
 
                         </div>
@@ -75,18 +74,25 @@ session_start();
                             <h4>Informació Usuari</h4>
 
                             <label>Nom usuari</label>
-                            <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari" value="<?php echo $_SESSION['usuari']?>" >
+                            <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari" value="<?php echo $_SESSION['usuari']?>" disable>
 
-                            <label>DNI</label>
+                            <label>Contrasenya</label>
                             <input type="password" name="contra" id="contra" placeholder= "Contraseña" >
                             
                             <h4>Altres</h4>
 
                             <label>Confidició Fiscia</label>
-                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Condicio']?>">
+                            <input type="text" name="cond" id="Con" value="<?php echo $_SESSION['Condicio']?>" disable>
 
                             <label>Comunicació Comercial</label>
-                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Comunicacio']?>">
+                            <div class="si">
+                            <input type="radio" name="comer" id="true" value="true" >
+                            <label for="html">Si</label><br>
+                            </div>
+                            <div class="no">
+                            <input type="radio" id="false" name="comer" value="false">
+                            <label for="css">No</label>
+                            </div>
 
                         </div>
 
