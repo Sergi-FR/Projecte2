@@ -16,8 +16,8 @@ CREATE TABLE `Activitats` (
 	`Descipció` varchar(255),
 	`Durada` TIME NOT NULL,
     `Color` varchar(255),
-	`Hora_Fi` TIME NOT NULL,
 	`Hora_i` TIME NOT NULL,
+	`Hora_Fi` TIME NOT NULL,
 	PRIMARY KEY (`ID_Act`)
 );
 
@@ -75,7 +75,7 @@ CREATE TABLE `Reserva` (
 	`ID_Act` INT(255) NOT NULL,
 	`Data_reserva` DATETIME NOT NULL,
 	`Data` DATE NOT NULL,
-	PRIMARY KEY (`DNI`,`ID_Act`)
+	PRIMARY KEY (`DNI`,`ID_Act`, `Data`)
 );
 
 CREATE TABLE `Usuari` (
@@ -226,10 +226,10 @@ INSERT INTO Reserva VALUES ('49259653R', 1, '2022-02-24 8:38:00', '2022-02-24');
 INSERT INTO Reserva VALUES ('93843945E', 2, '2022-02-24 8:15:00', '2022-02-24');
 INSERT INTO Reserva VALUES ('58249180J', 3, '2022-02-24 7:43:20', '2022-02-24');
 INSERT INTO Reserva VALUES ('45623459K', 4, '2022-02-24 8:38:00', '2022-02-24');
-INSERT INTO Reserva VALUES ('45623459K', 6, localtime(), '2022-03-05');
-INSERT INTO Reserva VALUES ('56567346F', 7, localtime(), '2022-03-05');
-INSERT INTO Reserva VALUES ('93843945E', 7, localtime(), '2022-03-05');
-INSERT INTO Reserva VALUES ('45623459K', 1, localtime(), '2022-03-05');
+INSERT INTO Reserva VALUES ('45623459K', 6, '2022-03-04 8:38:00', '2022-03-05');
+INSERT INTO Reserva VALUES ('56567346F', 7, '2022-02-04 8:38:00', '2022-03-05');
+INSERT INTO Reserva VALUES ('93843945E', 7, '2022-03-04 8:38:00', '2022-03-05');
+INSERT INTO Reserva VALUES ('45623459K', 1, '2022-03-04 8:38:00', '2022-03-05');
 
 
 
@@ -267,5 +267,43 @@ INSERT INTO Inscriure VALUES (default, '58249180J', '2022-02-24 8:38:00', 4);
 INSERT INTO Inscriure VALUES (default,  '45623459K', '2022-02-24 8:38:00', 1);
 
 
+###########################
+#       Porcediments      #
+###########################
 
+###########################
+#         Funcions        #
+###########################
+delimiter //
+create function inserta_reserva(_client varchar(9), _act int) returns varchar(255)
+	begin
+		
+        declare _dia int;
+        declare msg varchar(255);
+        
+        select rang(_act) into _dia;
+        
+        if _dia > 0 then
+			INSERT INTO Reserva VALUES (_client, _act, localtime(),date_add(curdate(), interval 1 day));
+			set msg = "Tas inscrit correctament";
+        else 
+			set msg = "Nomes pots inscriuret entre 24h i 1h abans de començar";
+		end if;
+		return msg;
+    end
+//
+delimiter //
+create function rang(_act int) returns int
+begin
 
+    declare _dia int;
+    
+	select dia into _dia
+	from té T join activitats A on A.ID_Act = T.ID_Act
+	where T.ID_Act = _act and 
+    dayofweek(curdate()) = dia and
+	localtime() between Hora_i and date_add(date_sub(Hora_i, interval 1 HOUR), interval 1 day);
+    
+	return _dia;
+end
+//
