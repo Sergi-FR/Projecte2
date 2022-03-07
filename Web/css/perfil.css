@@ -51,37 +51,44 @@ header {
     align-content: center;
     justify-content: center;
 
+    width:1024px ;
+
+    height: 80vh;
 
 }
 
 .formulari{
 
-    margin: 150px;
-
-
     background-color: #fff;
     border: 5px solid #fff;
     border-radius: 8px;
-    width: 50vh;
-    height: 50vh;
 }
 
 .formulari form{
 
-    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.infoclient{
+    width: 35%;
 
     display: flex;
     flex-direction: column;
-
 }
 
-.formulari form input{
+.usuari{
+    width: 35%;
 
+    display: flex;
+    flex-direction: column;
+}
+
+.infoclient label,.usuari label{
     margin: 10px;
-    
-
 }
-
 
 input[type=text], input[type=password]{
 

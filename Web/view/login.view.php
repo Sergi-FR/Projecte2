@@ -25,12 +25,12 @@ if(!empty($_POST['usuari']) && !empty($_POST['contra'])){
             $_SESSION['DNI'] = $row['DNI_Client'];
             $_SESSION['Nom'] = $row['Nom'];
             $_SESSION['Cognom'] = $row['Cognom'];
-            $_SESSION['Data_naixement'] = $row['Data_naixement'];
+            $_SESSION['Data'] = $row['Data_naixement'];
             $_SESSION['Tele'] = $row['Tel'];
-            $_SESSION['Correu_e'] = $row['Correu_e'];
+            $_SESSION['Correu'] = $row['Correu_e'];
             $_SESSION['Sexe'] = $row['Sexe'];
-            $_SESSION['Condicio_Fisica'] = $row['Condicio_Fisica'];
-            $_SESSION['Comunicació_comercial'] = $row['Comunicació_comercial'];
+            $_SESSION['Condicio'] = $row['Condicio_Fisica'];
+            $_SESSION['Comunicacio'] = $row['Comunicació_comercial'];
             
         }
         header("Location: menu.view.php");

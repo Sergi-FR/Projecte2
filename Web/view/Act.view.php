@@ -3,9 +3,7 @@
   include '../php/funcions.php';
   session_start();
   $user = $_SESSION['usuari'];
-  
-  act_insc();
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -69,18 +67,12 @@
               while($row = $result->fetch_assoc()){
               ?>
                 <li>
-                  <div class="tarjeta" style="border: 2px solid <?php echo $row['Color']; ?>">
+                  <div class="tarjeta">
                     <div class="img_Act">
                       <img src="../img/galeria1.jpg" alt="Activitat">
-                      <form action="" method="post">
-                      <input type="text" name="id_act" class="id_act" value="<?php echo $row['Num_Act'] ?>">
-                      <input type="submit" value="Inscriure" name="ins">
-                      <input type="submit" value="Desinscriure" name="des">
-                      </form>
-
+                      <input type="button" value="Insciure">
                     </div>
                     <div class ="info_Act">
-                      <h4><?php echo $row['Act'] ?></h4>
                       <p><span>Num. Activitat:</span><?php echo $row['Num_Act'] ?></p>
                       <p><span>Num. Sala:</span><?php echo $row['Num_Sala'] ?></p>
                       <p><span>Durada de L'activitat:</span><?php echo $row['Durada'] ?></p>
@@ -111,17 +103,12 @@
               while($row = $result->fetch_assoc()){
               ?>
                 <li>
-                  <div class="tarjeta" style="border: 2px solid <?php echo $row['Color']; ?>">
+                  <div class="tarjeta">
                     <div class="img_Act">
                       <img src="../img/galeria1.jpg" alt="Activitat">
-                      <form action="" method="post">
-                      <input type="text" name="id_act" class="id_act" value="<?php echo $row['Num_Act'] ?>">
-                      <input type="submit" value="Insciure" name="ins">
-                      <input type="submit" value="Desinscriure" name="des">
-                      </form>
+                      <input type="button" onclick="loadDoc()" value="Insciure">
                     </div>
-                    <div class ="info_Act"  >
-                      <h4><?php echo $row['Act'] ?></h4>
+                    <div class ="info_Act">
                       <p><span>Num. Activitat: </span><?php echo $row['Num_Act'] ?></p>
                       <p><span>Num. Sala: </span><?php echo $row['Num_Sala'] ?></p>
                       <p><span>Durada de L'activitat: </span><?php echo $row['Durada'] ?></p>

@@ -45,6 +45,10 @@ session_start();
 
                             <h4>Informació Client</h4>
 
+                            <label>DNI</label>
+
+                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['DNI']?>" disabled>
+
                             <label>Nom</label>
                             <input type="text" name="usuari" id="usuari" placeholder="nom d'usuari" value="<?php echo $_SESSION['Nom']?>">
 
@@ -52,13 +56,17 @@ session_start();
                             <input type="text" name="Cognom" id="Cognom" placeholder="Cognom" value="<?php echo $_SESSION['Cognom']?>">
 
                             <label>Data</label>
-                            <input type="text" name="Data" id="Data" placeholder="Data de naixement" value="<?php echo $_SESSION['Data_naixament']?>">
+                            <input type="text" name="Data" id="Data" placeholder="Data de naixement" value="<?php echo $_SESSION['Data']?>">
 
                             <label>Tel.</label>
-                            <input type="text" name="Telefon" id="Telefon" placeholder="Telefon" value="<?php echo $_SESSION['Tele']?>">     
+                            <input type="text" name="Telefon" id="Telefon" placeholder="Telefon" value="<?php echo $_SESSION['Tele']?>">
 
-                            <label>DNI</label>
-                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['DNI']?>" disabled>
+                            <label>Correu Electronic</label>
+                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Correu']?>">     
+
+                            <label>Genere</label>
+                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Sexe']?>">
+
 
                         </div>
 
@@ -67,14 +75,22 @@ session_start();
                             <h4>Informació Usuari</h4>
 
                             <label>Nom usuari</label>
-                            <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari" >
+                            <input type="text" name="usuari" id="usuari" placeholder= "nom d'usuari" value="<?php echo $_SESSION['usuari']?>" >
 
                             <label>DNI</label>
-                            <input type="password" name="contra" id="contra" placeholder= "Contraseña">
+                            <input type="password" name="contra" id="contra" placeholder= "Contraseña" >
+                            
+                            <h4>Altres</h4>
+
+                            <label>Confidició Fiscia</label>
+                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Condicio']?>">
+
+                            <label>Comunicació Comercial</label>
+                            <input type="text" name="dni" id="dni" placeholder="DNI" value="<?php echo $_SESSION['Comunicacio']?>">
 
                         </div>
 
-                        <input type="submit" value="Login">
+                        <input type="submit" value="Actualitzar">
 
                     </form>
                 </div>
