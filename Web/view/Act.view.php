@@ -56,7 +56,7 @@
   </header>
 
     <h4><?php
-    if(!empty($_POST['ins'])){
+    if(!empty($_POST)){
       while($row = $result->fetch_assoc()){
         echo $row['msg'];
       }
