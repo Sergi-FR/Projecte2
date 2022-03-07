@@ -292,6 +292,26 @@ create function inserta_reserva(_client varchar(9), _act int) returns varchar(25
 		return msg;
     end
 //
+
+delimiter //
+create function delete_reserva(_client varchar(9), _act int) returns varchar(255)
+	begin
+		
+        declare _dia int;
+        declare msg varchar(255);
+        
+        select rang(_act) into _dia;
+        
+        if _dia > 0 then
+			DELETE FROM Reserva where DNI= _client and ID_act = _act and data = date_add(curdate(), interval 1 day);
+			set msg = "Tas desinscrit correctament";
+        else 
+			set msg = "Nomes pots desinscriuret entre 24h i 1h abans de començar";
+		end if;
+		return msg;
+    end
+//
+
 delimiter //
 create function rang(_act int) returns int
 begin
