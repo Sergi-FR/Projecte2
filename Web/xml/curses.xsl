@@ -7,47 +7,52 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>GYM</title>
+
         <link rel="stylesheet" href="../css/xml.css"/>
+        
       </head>
       <body>
-        
         <div class="header">
-          <ul>
-            <li><img src="../img/logo.png" alt="logo"/></li>
-            <li>
-              <ul class="menu">
-                <li><a href="../view/Act.php">Activitats Diaries</a></li>
-                <li><a href="../view/Act_reg.php">Reguistres Activitats</a></li>
-                <li><a href="curses.xml">Curses</a></li>
-                <li><a href="../view/Curses_reg.php">Participacio Curses</a></li>
-              </ul>
-            </li>
-            <li id="user"><img src="" alt="img sessio"/>
-              <ul>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="../php/tancar.php">Tancar Sessio</a></li>
-              </ul>
-            </li>
-          </ul>
+          <img src="../img/logo.png" alt="logo"/>
         </div>
 
         <div class="main">
 
           <h1>Curses:</h1>
-          <div class="curses">
-            <xsl:for-each select="curses/cursa">
-              <div class="cursa">
-                <h3><xsl:value-of select="nom"/></h3>
+
+          <xsl:for-each select="curses/cursa">
+          <div class="tarjeta">
+              <div class="img_Act">
                 <img src="../img/{img}" alt="img de cursa" width="100%"/>
-                <h4><xsl:value-of select="modalitat"/></h4>
-                <h4>A <xsl:value-of select="localitat"/> el <xsl:value-of select="data"/></h4>
-                <h4><xsl:value-of select="durada"/></h4>
                 <input type="button" value="Inscriu-te" id="boto"/>
               </div>
-            </xsl:for-each>
-
+              <div class="info_Act">
+                <h3><xsl:value-of select="nom"/></h3>
+                <h4><span>-Modalitat: </span><xsl:value-of select="modalitat"/></h4>
+                <h4><span>-Localitat: </span><xsl:value-of select="localitat"/></h4>
+                <h4><span>-Data: </span><xsl:value-of select="data"/></h4>
+                <h4><span>-Durada: </span><xsl:value-of select="durada"/></h4>
+              </div>
           </div>
+        </xsl:for-each>
 
+
+<!-- 
+          <div class="tarjeta">
+            <div class="img_Act">
+              <img src="../img/galeria1.jpg" alt="Activitat"/>
+              <input type="button" value="Insciure"/>
+            </div>
+            <div class ="info_Act">
+              <p><span>Num. Activitat:</span>/p>
+              <p><span>Num. Sala:</span></p>
+              <p><span>Durada de L'activitat:</span></p>
+              <p><span>Hora Inici:</span></p>
+              <p><span>Hora Fi:</span></p>
+              <p><span>Aforament:</span></p>
+              <p><span>Monitor:</span></p>
+              <p><span></span></p>
+            </div> -->
         </div>
 
         <div class="footer">

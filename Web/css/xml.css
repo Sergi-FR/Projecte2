@@ -29,21 +29,74 @@ a{
 .header {
 
     background-image: url(../img/fons.jpg); 
-    height: 100vh;
+    height: 60vh;
 
 }
 
-.header ul li {
+.header img{
+    width: 20vh;
+    height: 15vh;
+}
+
+.main h1{
+    margin: 15px;
+    padding: 10px;
+
+}
+.tarjeta {
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    box-shadow: -1px 0px 5px #0000001f;
+    width: 100%;
+    background: #fff;
+    padding: 20px 0px;
+    border-radius: 8px;
 
 }
 
-.header ul li img{
+.img_Act{
+    display: flex;
+    flex-direction: column;
+}
 
-    width: 100px;
-    height: 100px;
+.img_Act img{
+    width: 700px;
+    height: 400px;
+
+}
+.img_Act input[type=button]{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.info_Act{
+    text-align: center;
+}
+
+.info_Act h3,.info_Act h4{
+    
+    margin: 10px;
+    padding: 10px;
+}
+
+.info_Act h3{
+
+    font-size: 40PX;
+    background-color: #0000001f;
+
+
+}
+
+main .info_Act span{
+    margin: 10px;
+    padding: 10px;
+
 }
 

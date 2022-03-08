@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 
 function con(){
     
     //Connexio a la BD
-    $connexio = new mysqli("localhost", "root", "1234", "projecte2");
+    $connexio = new mysqli("localhost", "root", "", "projecte2");
 
     //Comprovasio de la connexio
     if($connexio->connect_errno){
