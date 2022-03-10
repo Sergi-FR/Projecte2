@@ -2,9 +2,15 @@ public class CorreuElectronic {
 
     private String correu;
 
-    //Seters i Geters
-    //-----------------------------------|
+    public CorreuElectronic() {
+    }
 
+    public CorreuElectronic(String correu) {
+        this.correu = correu;
+    }
+
+    // Seters i Geters
+    // #######################################################################|
     public String getCorreu() {
         return correu;
     }
@@ -12,30 +18,22 @@ public class CorreuElectronic {
     public void setCorreu(String correu) {
         this.correu = correu;
     }
-    //-----------------------------------|
 
+    // Metodes
+    // #######################################################################
+    public boolean validarCorreu(String correu) {
 
-    //Constructors
-    //-----------------------------------|
-    public CorreuElectronic() {
+        if (!correu.contains("@")) {
+            System.out.println("Falet un @");
+            return false;
+        }
+
+        if (!correu.contains(".")) {
+            System.out.println("Falte un punt");
+            return false;
+        }
+
+        return true;
+
     }
-
-
-    public CorreuElectronic(String correu) {
-        this.correu = correu;
-    }
-
-    //-----------------------------------|
-
-    public void validarCorreu(String correu2) {
-    }
-
-
-
-
-
-
-
-
-
 }

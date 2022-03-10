@@ -15,23 +15,30 @@ public class ConexioBD {
     public Connection conBD() {
 
         try {
+
             ConBD = DriverManager.getConnection(servidor + bbdd, user, password);
             System.out.println("Connexio amb exit");
+
         } catch (SQLException ex) {
+
             System.out.println("No sa pogut connectar");
             ex.printStackTrace(); 
+
         }
         return ConBD;
     }
 
     public void desBD() {
 
-        try {         
+        try {     
+
             ConBD.close();
+
         } catch (SQLException e) {
 
             System.out.println("No sa pogut tancar la conexio amb la base de dades");
             e.printStackTrace();
+            
         }
     }
     

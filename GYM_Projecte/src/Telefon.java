@@ -2,9 +2,16 @@ public class Telefon {
 
     private String telefono;
 
+    public Telefon(){
 
-    //Seters i Geters
-    //-------------------------------------------|
+    }
+
+    public Telefon(String telefono) {
+        this.telefono = telefono;
+    }
+
+    // Seters i Geters
+    // #######################################################################|
     public String getTelefono() {
         return telefono;
     }
@@ -13,19 +20,6 @@ public class Telefon {
         this.telefono = telefono;
     }
     
-    //-------------------------------------------|
-
-
-    //Constructors
-    //-----------------------------------|
-    public Telefon(){
-
-    }
-
-    public Telefon(String telefono) {
-        this.telefono = telefono;
-    }
-    //-----------------------------------|
 
 
     // Validar Telefon

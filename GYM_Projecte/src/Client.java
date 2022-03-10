@@ -3,6 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -10,7 +11,6 @@ public class Client {
 
     private String nom;
     private String cognom;
-    private String cognom2;
     private Dni dni;
     private LocalDate dataNaixament;
     private CorreuElectronic correu;
@@ -20,6 +20,24 @@ public class Client {
     private boolean comunicacio;
     private String condicioFisica;
     private int edat;
+
+    public Client(){
+
+        dni = new Dni();
+        dataNaixament = LocalDate.now();
+        correu = new CorreuElectronic();
+        telefon = new Telefon();
+        compteBancari = new CompteBancari();
+
+    }
+    
+
+    @Override
+    public String toString() {
+        return "Client [cognom=" + cognom + ", compteBancari=" + compteBancari.getCCC() + ", comunicacio=" + comunicacio
+                + ", condicioFisica=" + condicioFisica + ", correu=" + correu.getCorreu() + ", dataNaixament=" + dataNaixament
+                + ", dni=" + dni + ", edat=" + edat + ", nom=" + nom + ", sexe=" + sexe + ", telefon=" + telefon.getTelefono() + "]";
+    }
 
 
     // Seters i Geters
@@ -39,14 +57,6 @@ public class Client {
 
     public void setCognom(String cognom) {
         this.cognom = cognom;
-    }
-
-    public String getCognom2() {
-        return cognom2;
-    }
-
-    public void setCognom2(String cognom2) {
-        this.cognom2 = cognom2;
     }
 
     public Dni getDni() {
@@ -204,8 +214,6 @@ public class Client {
             // #######################################################################|
             this.cognom = entradateclat.next();
 
-            this.cognom2 = entradateclat.next();
-
 
             // Validació de Data
             // #######################################################################|
@@ -289,12 +297,28 @@ public class Client {
 
     }
 
+    private void calcularEdat(){
+
+        LocalDate avui = LocalDate.now();
+        this.edat = Period.between(dataNaixament, avui).getYears();
+    }
+
 
     // Mapeig (Entarda de BDD a OBJ)
     // #######################################################################|
     private void cargarDadesDeSenteciaAClient(ResultSet rs) throws SQLException {
 
         this.setDni(new Dni(rs.getString("DNI")));
+        this.setNom(nom);
+        this.setCognom(cognom);
+        this.setDataNaixament(rs.getDate("Data_naixement").toLocalDate());
+        this.setCorreu(new CorreuElectronic(rs.getString("Correu_e")));
+        this.setSexe(sexe);
+        this.setTelefon(new Telefon(rs.getString("Tel")));
+        this.setCondicioFisica(condicioFisica);
+        this.setComunicacio(comunicacio);
+        // this.setCompteBancari(new CompteBancari());
+        
 
     }
 
@@ -304,6 +328,15 @@ public class Client {
     private void cargarDadesDeClientASentencia(PreparedStatement ps) throws SQLException {
 
         ps.setString(1, this.dni.getDni());
+        ps.setString(2, this.nom);
+        ps.setString(3, this.cognom);
+        ps.setString(4, this.dataNaixament.toString());
+        ps.setString(5, this.telefon.getTelefono());
+        ps.setString(6, this.correu.getCorreu());
+        ps.setString(7, this.sexe);
+        ps.setString(8, this.condicioFisica);
+        ps.setBoolean(9, this.comunicacio);
+        // ps.setString(20, this.compteBancari.getCCC());
 
     }
 
